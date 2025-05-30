@@ -160,6 +160,8 @@
         await delay(250);
       }
 
+	    readyForNextCountdown = false;
+
       // await delay(500);
 
       // Step 2: Click "CC Answering Machine"
@@ -177,6 +179,8 @@
         //) break;
         await delay(250);
       }
+
+	readyForNextCountdown = true;
     } catch (err) {
       console.error('ASM automation error:', err);
     }
@@ -213,6 +217,7 @@
   let loopInterval = null;
   
     let countdown = null;
+	let readyForNextCountdown = true;
 
   const loopBtn = document.createElement('button');
   loopBtn.textContent = 'START LOOP';
@@ -249,6 +254,10 @@ if (timeText) {
   dialingSeconds = parts.length === 3 ? parts[2] : parts[1] || 0; // fallback to 0 if undefined
 }
 
+	    const callTypeEl = document.querySelector('#sfli-call-header .f9-nowrap-ellipsis span:first-child');
+		const callTypeText = callTypeEl?.textContent?.trim(); // "Agent Call" or "Inbound Call"
+
+
 				if (
 				  (
 				    stateText === ': Live Call' ||
@@ -256,6 +265,8 @@ if (timeText) {
 				    (stateText === ': Dialing' && dialingSeconds >= 35)
 				  )
 				  && !countdown
+					&& callTypeText === 'Agent Call'
+					&& readyForNextCountdown === true
 				) {
         let seconds = 3;
         countdown = setInterval(() => {
