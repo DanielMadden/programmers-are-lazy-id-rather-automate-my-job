@@ -265,7 +265,7 @@ if (timeText) {
 				    (stateText === ': Dialing' && dialingSeconds >= 35)
 				  )
 				  && !countdown
-					&& callTypeText === 'Agent Call'
+					&& callTypeText !== 'Inbound Call' 
 					&& readyForNextCountdown === true
 				) {
         let seconds = 3;
