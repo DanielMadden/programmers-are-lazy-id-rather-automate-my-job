@@ -48,9 +48,9 @@
   document.addEventListener('mousemove', (e) => {
     if (isDragging) {
       panel.style.left = `${e.clientX - offsetX}px`;
-      panel.style.top = `${e.clientY - offsetY}px`;
+      panel.style.bottom = `${e.clientY - offsetY}px`;
       panel.style.right = 'auto';
-      panel.style.bottom = 'auto';
+      panel.style.top = 'auto';
     }
   });
 
