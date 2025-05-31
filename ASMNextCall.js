@@ -185,7 +185,6 @@
       console.error('ASM automation error:', err);
     }
 
-    await delay(500);
     nextCallBtn.disabled = false;
     nextCallBtn.textContent = 'ASM Next Call';
   };
