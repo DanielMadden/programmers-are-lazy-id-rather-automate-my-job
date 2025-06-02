@@ -267,11 +267,11 @@ if (timeText) {
 					&& callTypeText !== 'Inbound Call' 
 					&& readyForNextCountdown === true
 				) {
-        let seconds = 3;
+        let seconds = 4;
         countdown = setInterval(() => {
           loopBtn.textContent = `STOP LOOP (${seconds}s)`;
           seconds--;
-          if (seconds < 0) {
+          if (seconds == 4) playDing(1600,150) else if (seconds < 0) {
             playDing(400, 300);
             clearInterval(countdown);
             countdown = null;
@@ -280,7 +280,7 @@ if (timeText) {
           } else playDing();
         }, 1000);
       }
-    }, 1000);
+    }, 100);
   };
 
   const stopLoop = () => {
