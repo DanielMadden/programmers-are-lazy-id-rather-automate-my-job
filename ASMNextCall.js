@@ -281,7 +281,7 @@ if (timeText) {
           } else playDing();
         }, 1000);
       }
-    }, 100);
+    }, 10);
   };
 
   const stopLoop = () => {
