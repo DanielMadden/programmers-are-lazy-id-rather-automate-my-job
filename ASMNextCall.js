@@ -204,7 +204,8 @@
   oscillator.start();
 
   // Fade out for smoother sound
-  gainNode.gain.setValueAtTime(0.5, context.currentTime);
+  gainNode.gain.setValueAtTime(asmVolume, context.currentTime);
+
   gainNode.gain.exponentialRampToValueAtTime(0.001, context.currentTime + duration / 1000);
 
   oscillator.stop(context.currentTime + duration / 1000);
@@ -217,6 +218,9 @@
   
     let countdown = null;
 	let readyForNextCountdown = true;
+let asmDelaySeconds = 3; // Default value, editable by the user
+	let asmVolume = 0.5; // Default volume (range: 0.0 to 1.0)
+
 
   const loopBtn = document.createElement('button');
   loopBtn.textContent = 'START LOOP';
@@ -267,7 +271,7 @@ if (timeText) {
 					&& callTypeText !== 'Inbound Call' 
 					&& readyForNextCountdown === true
 				) {
-        let seconds = 3; // Amount of ticks before it ASMs
+        let seconds = asmDelaySeconds; // Amount of ticks before it ASMs
 					playDing(1600,150, 'triangle')
         countdown = setInterval(() => {
           loopBtn.textContent = `STOP LOOP (${seconds}s)`;
@@ -298,11 +302,69 @@ if (timeText) {
     loopActive ? stopLoop() : startLoop();
   }
 
+	const inputRow = document.createElement('div');
+Object.assign(inputRow.style, {
+  display: 'flex',
+  gap: '4px',
+  marginTop: '4px',
+	width: '100%'
+});
+
+// Delay Input
+const delayInput = document.createElement('input');
+delayInput.type = 'number';
+delayInput.min = '1';
+delayInput.value = asmDelaySeconds;
+delayInput.title = 'Delay (seconds)';
+Object.assign(delayInput.style, {
+  flex: '1',
+  padding: '6px',
+  border: '1px solid #ccc',
+  borderRadius: '4px',
+  fontSize: '12px',
+  background: '#f5f5f5',
+  textAlign: 'center',
+color: 'black',minWidth: '0'
+});
+delayInput.onchange = () => {
+  asmDelaySeconds = parseInt(delayInput.value) || 3;
+	console.log(asmDelaySeconds)
+};
+
+// Volume Input
+const volumeInput = document.createElement('input');
+volumeInput.type = 'number';
+volumeInput.min = '0';
+volumeInput.max = '1';
+volumeInput.step = '0.1';
+volumeInput.value = asmVolume;
+volumeInput.title = 'Volume (0.0 to 1.0)';
+Object.assign(volumeInput.style, {
+  flex: '1',
+  padding: '6px',
+  border: '1px solid #ccc',
+  borderRadius: '4px',
+  fontSize: '12px',
+  background: '#f5f5f5',
+  textAlign: 'center',
+	color: 'black',minWidth: '0'
+});
+volumeInput.onchange = () => {
+  asmVolume = parseFloat(volumeInput.value) || 0.5;
+	console.log(asmVolume)
+};
+
+inputRow.appendChild(delayInput);
+inputRow.appendChild(volumeInput);
+
+
 
   // === ASSEMBLE PANEL ===
   panel.appendChild(topBar);
   panel.appendChild(nextCallBtn);
   panel.appendChild(loopBtn);
+panel.appendChild(inputRow);
+
 // Append to DOM
   document.body.appendChild(panel);
   
