@@ -190,12 +190,12 @@
   };
   
   // DING SOUND
-  function playDing(frequency = 800, duration = 150) {
+  function playDing(frequency = 800, duration = 150, oscillatorType = 'sine') {
   const context = new (window.AudioContext || window.webkitAudioContext)();
   const oscillator = context.createOscillator();
   const gainNode = context.createGain();
 
-  oscillator.type = 'sine'; // You can try 'triangle' or 'square' too
+  oscillator.type = oscillatorType; // You can try 'triangle' or 'square' too
   oscillator.frequency.value = frequency;
 
   oscillator.connect(gainNode);
@@ -267,11 +267,12 @@ if (timeText) {
 					&& callTypeText !== 'Inbound Call' 
 					&& readyForNextCountdown === true
 				) {
-        let seconds = 4;
+        let seconds = 3; // Amount of ticks before it ASMs
+					playDing(1600,150, 'triangle')
         countdown = setInterval(() => {
           loopBtn.textContent = `STOP LOOP (${seconds}s)`;
-          seconds--;
-          if (seconds == 4) playDing(1600,150) else if (seconds < 0) {
+          seconds--;  
+	if (seconds < 0) {
             playDing(400, 300);
             clearInterval(countdown);
             countdown = null;
