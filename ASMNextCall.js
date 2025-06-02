@@ -271,18 +271,20 @@ if (timeText) {
 					&& callTypeText !== 'Inbound Call' 
 					&& readyForNextCountdown === true
 				) {
-        let seconds = asmDelaySeconds; // Amount of ticks before it ASMs
+	let seconds;				
+	if (callTypeText === 'Agent Call' && stateText === ': Wrap Up') {seconds =0}				else seconds = asmDelaySeconds; // Amount of ticks before it ASMs
 					playDing(1600,150, 'triangle')
         countdown = setInterval(() => {
           loopBtn.textContent = `STOP LOOP (${seconds}s)`;
-          seconds--;  
-	if (seconds < 0) {
+	if (seconds <= 0) {
             playDing(400, 300);
             clearInterval(countdown);
             countdown = null;
             nextCallBtn.click();
             loopBtn.textContent = 'STOP LOOP';
           } else playDing();
+		
+          seconds--;  
         }, 1000);
       }
     }, 10);
@@ -327,7 +329,7 @@ Object.assign(delayInput.style, {
 color: 'black',minWidth: '0'
 });
 delayInput.onchange = () => {
-  asmDelaySeconds = parseInt(delayInput.value) || 3;
+  asmDelaySeconds = parseInt(delayInput.value) || 4;
 	console.log(asmDelaySeconds)
 };
 
