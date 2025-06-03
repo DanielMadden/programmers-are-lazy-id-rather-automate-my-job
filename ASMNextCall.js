@@ -7,7 +7,7 @@
     position: 'fixed',
     bottom: '200px',
     left: '300px',
-    zIndex: '9999',
+    zIndex: '9999999',
     background: 'rgba(255,255,255,0.3)',
     color: '#fff',
     padding: '10px',
