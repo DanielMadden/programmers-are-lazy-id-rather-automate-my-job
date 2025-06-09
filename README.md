@@ -1,5 +1,12 @@
-Defffinitely not injecting these scripts into the console at my work. Why would I ever do that?
+# Work Widgets
 
-Security concerns? No worries, it's all just loops and native clicks. Salesforce blocks me from sending or receiving anything outside of the web app, anyways.
+Widgets I've created to improve the efficiency, output, and overall happiness of myself, my team, and those I trust at work.
 
-Besides, I'm going to lose my mind clicking the same 4 buttons every 15 seconds. You know how many clicks that is in an 8 hour shift? 1,920. No. Just. No.
+## ASM Next Call Widget
+
+This widget saves the most time and effort.
+Features outlined below.
+
+## Tab / Toast Killer Widget
+
+This widget 
