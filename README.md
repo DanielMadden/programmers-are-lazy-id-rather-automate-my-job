@@ -1,6 +1,8 @@
 Widgets I've created to improve the efficiency, output, and overall happiness of myself, my team, and those I trust at work.
 
 # ASM Next Call Widget
+ASM Next Call gives a 1-click solution to a 4-click problem, reducing fatigue and the existential dread that plagues us all.
+
 [CLICK HERE FOR THE CODE](https://github.com/DanielMadden/programmers-are-lazy-id-rather-automate-my-job/blob/main/ASMNextCall.js)
 
 ## The Widget
@@ -30,3 +32,5 @@ The loop countdown can be stopped in two ways:
 # Tab / Toast Killer Widget
 
 This widget keeps the tab count under 10 and removes the annoying toast notifications. It can mass kill or run a continous loop.
+
+[CLICK HERE FOR THE CODE](https://github.com/DanielMadden/programmers-are-lazy-id-rather-automate-my-job/blob/main/TabToastKiller.js)
