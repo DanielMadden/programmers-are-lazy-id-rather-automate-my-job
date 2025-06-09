@@ -9,6 +9,10 @@ With my solution, we click a *maximum* of 960 times, which can be even lower wit
 
 That's 2,880 less clicks--*and that's the minimum.*
 
+My solution also reduces our wrap up time by a 1-4 seconds.
+
+All of these statistics are assuming that the employee is "focused," which is usually not the case. Meaning that, most likely, the impacts of this solution are far greater than what has been calculated. Although mental fatigue cannot be directly measured, it is undoubtably relieved with this solution and can enable the dialer to give more efforts towards the quality of their call and keeping personal and team morale high.
+
 [CLICK HERE FOR THE CODE](https://github.com/DanielMadden/programmers-are-lazy-id-rather-automate-my-job/blob/main/ASMNextCall.js)
 
 ## The Widget
@@ -19,7 +23,7 @@ That's 2,880 less clicks--*and that's the minimum.*
 
 Widget will go near-invisible when the mouse is not on it.
 
-## Behaviors
+## Complex Behaviors
 
 ## Looping
 When "START LOOP" has been pressed, the loop will be active and the button will then say "STOP LOOP."
