@@ -1,6 +1,7 @@
 Widgets I've created to improve the efficiency, output, and overall happiness of myself, my team, and those I trust at work.
 
 # ASM Next Call Widget
+[CLICK HERE FOR THE CODE](https://github.com/DanielMadden/programmers-are-lazy-id-rather-automate-my-job/blob/main/ASMNextCall.js)
 
 ## The Widget
 <img src="https://github.com/user-attachments/assets/0071ee00-57cc-4d57-9f11-a6dfa862ade1" width="540">
