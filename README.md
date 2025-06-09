@@ -3,6 +3,12 @@ Widgets I've created to improve the efficiency, output, and overall happiness of
 # ASM Next Call Widget
 ASM Next Call gives a 1-click solution to a 4-click problem, reducing fatigue and the existential dread that plagues us all.
 
+Under normal circumstances with 2 calls per minute we are required to click a *minimum* of 3,840 times.
+
+With my solution, we click a *maximum* of 960 times, which can be even lower with the countdown loop.
+
+That's 2,880 less clicks--*and that's the minimum.*
+
 [CLICK HERE FOR THE CODE](https://github.com/DanielMadden/programmers-are-lazy-id-rather-automate-my-job/blob/main/ASMNextCall.js)
 
 ## The Widget
